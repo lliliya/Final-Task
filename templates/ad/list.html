@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ ad.category.name }}{% endblock title %}
+
+{% block content %}
+{% for ad in ad_list %}
+{% if ad.actuality %}
+<a href="{{ request.path }}{{ ad.id }}"><h3 align="center"> {{ ad.header }}</h3></a><br>
+<h2 align="center"> {{ ad.datetime_creation }}</h2><br>
+{{ ad.text|safe }}<br>
+{% endif %}
+{% endfor %}
+{% endblock content %}

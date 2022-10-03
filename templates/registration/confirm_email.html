@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    <p>Проверьте Вашу почту. Мы отправили Вам код подтверждения регистрации. Полученный код подтверждения надо ввести в поле ниже </p>
+  </div>
+
+<a href="{% url 'confirm' %}">Ввести код подтверждения</a>
+{% endblock content %}

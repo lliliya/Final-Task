@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+<form action="{% url 'confirm' %}" method="post">
+  {% csrf_token %}
+  <label>Email</label>
+  <input type="email" name="user"><br><br>
+  <label>Код подтверждения</label>
+  <input type="text" name="code"><br><br>
+  <button type="submit" class="btn btn-success">Отправить</button>
+</form>
+{% endblock content %}

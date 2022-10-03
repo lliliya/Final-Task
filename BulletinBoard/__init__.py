@@ -1,0 +1,1 @@
+from .settings import DEFAULT_FROM_EMAIL

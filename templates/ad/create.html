@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <script type="text/javascript"  src="{% static 'tinymce/js/tinymce/prism.js' %}"></script>-->
+<!--    <script type="text/css"  src="{% static 'tinymce/css/prism.css' %}"></script>-->
+    <title>Разместить объявление</title>
+    {{ form.media }}
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+<!--    {{ form.category.all }}-->
+<!--    {{ form.header }}-->
+<!--    {{ form.text.as_widget }}-->
+    {{ form.as_p }}
+    <input type="submit" value="Добавить объявление">
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ ad.header }}{% endblock title %}
+
+{% block content %}
+<h1 align="center"> {{ ad.header }}</h1><br>
+<h5 align="center"> Объявление опубликовано: {{ ad.datetime_creation }}</h5><br>
+{{ ad.text|safe }}<br>
+{{ ad.user.username }}<br>
+<p>Отклинулись уже {{ replies }} раз</p>
+{% if new_reply %}
+<h4>Ваш отклик отправлен</h4>
+{% else %}
+<h4>Отправьте отклик на объявление</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ reply_form.as_p }}
+    <input type="submit" value="Отправить">
+</form>
+{% endif %}
+{% endblock content %}
